@@ -69,3 +69,7 @@ bandit0@bandit.labs.overthewire.org's password: bandit0
 [# Passo3.] 
 Pronto
 ```
+
+## Resources
+[OverTheWire](https://overthewire.org/wargames/bandit/bandit0.html)
+
