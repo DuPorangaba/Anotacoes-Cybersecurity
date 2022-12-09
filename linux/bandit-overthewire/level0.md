@@ -5,42 +5,56 @@
 - [X] [Comandos para o desafio](#comandos-para-esse-level)
 - [X] [Um pouco de Teoria](#teoria)
 - [X] [Write Up](#write-up)
-- [X] [Solução](#soluçao)
+- [X] [Solução](#solução)
 - [X] [Resources](#resources)
 
 ## Goal
-Logar dentro do jogo usando SSH.
+A senha para o próximo level está em um arquivo **readme** no diretório home.
 
 ## Comandos para esse level
-`ssh`
+`ls`, `cd`, `cat`, `file`, `du`, `find`
+
+*Nota: Nem todos os comandos listados são necessários*
+
+ Comandos |                             O que faz?
+ ---------|--------
+ ls       |lista o que tem dentro do diretório
+ cd       |muda o working directory (diretório atual)
+ cat      |"lê" o arquivo e imprimir (o que tem dentro) na saída padrão
+ file     |determina o tipo de arquivo
+ du       |estima o espaço usado por um arquivo
+ find     |procura por arquivos de acordo com a hierarquia dos diretórios
+ 
+ **Obs:** Para saber mais informações sobre como usar os comandos, possíveis flags, etc. Use `comando --help` para obter um "resumo" do manual, ou `man comando` para acessar o manual do comando.
 
 ## Teoria
-SSH é uma sigla para Secure Socket Shell.
 
-SSH é usado para logar em máquinas de maneira remota e executar comandos. 
-Também pode ser usado para transferir arquivos quando associado a protocolos 
-como SSH file transfer ou secure copy (SCP).
+**ls**
 
-SSH usa o modelo [client-server](https://en.wikipedia.org/wiki/Client%E2%80%93server_model)
+`ls [OPTION] [FILE]`
 
-SSH usa criptografia de chave pública para autenticar o computador remoto e permitir
-autenticar o usuário, se necessário.
+Vai listar informações sobre os arquivos, por default do diretório atual, mas é possivel especificar outros diretórios. 
 
-**Sintaxe**
-Importante lembrar de ter o SSH instalado ou ativado na máquina.
+Flags | O que significa?
+------|-----------------
+-a    | lista TODOS os arquivos e diretórios, não ignora os que começam com "."
+-l    | lista usando o formato de listagem longa. Mostrando, respectivamente,  as permissões do arquivo/diretório, o propretário, o nome do grupo, tamanho do arquivo, data e tempo de criação/modificação, nome do arquivo/diretório.
 
-```
-ssh user@ip-alvo
+*Nota: É possível juntar flags, por exemplo `ls -la`*
 
-ssh user@ip-alvo -p numeroPorta
-```
-Em que:
-user - é nome do usuário que você vai acessar dentro daquela máquina
+**cd**
 
-ip-alvo - pode ser uma url, um ip da máquina que você quer acessar
+`cd [diretorio]`
 
-Você também pode especificar a porta adicionando `-p numeroPorta` no final. 
-Por padrão a porta do SSH é 22.
+Para ir para o diretório anterior ao atual, usa-se `cd ..`, pois o `..` é processado removendo o nome do componete do caminho anterior voltando para uma barra.
+
+**cat**
+
+`cat [OPTION] [FILE]`
+
+Concatena o arquivo para a saída padrão (terminal).
+
+Se não passa nenhum arquivo, or quando o arquivo é "-", lê a entrada padrão (terminal), ou seja, copia a entrada padrão para a saída padrão.
 
 ## Write up
 **Informações**
@@ -51,22 +65,40 @@ Por padrão a porta do SSH é 22.
 
 **Passo a Passo**
 
-***[# Passo1.]*** No terminal, rodar `bandit0@bandit.labs.overthewire.org -p 2220`
+***[# Passo1.]*** Conectar e logar no SSH usando as informações acima.
 
-***[# Passo2.]*** Colocar a senha `bandit0`
+***[# Passo2.]*** Rodar `ls`, para localizar o **readme**.
 
-***[# Passo3.]*** Por fim, deve aparecer essa tela.
-![image](https://user-images.githubusercontent.com/62816035/206586254-900f822e-3981-4a4d-89c9-590a57b1f9c8.png)
+***[# Passo3.]***  Para ver o que tem dentro do **readme**  e obter a senha, rodar `cat readme`.
+
+***[# Passo4.]*** Para sair, rode `exit`
 
 ## Solução
-```
+<pre>
 [# Passo1.] 
-> ssh bandit5@bandit.labs.overthewire.org -p 2220
+<b>> ssh bandit0@bandit.labs.overthewire.org -p 2220</b>
+bandit0@bandit.labs.overthewire.org's password: <b>bandit0</b>
 
 [# Passo2.] 
-bandit0@bandit.labs.overthewire.org's password: bandit0
+<b>bandit0@bandit:~$</b> ls 
+readme
 
 [# Passo3.] 
-Pronto
-```
+<b>bandit0@bandit:~$</b> cat readme
+NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL
+
+[# Passo4.]
+<b>bandit0@bandit:~$</b> exit
+logout
+Connection to bandit.labs.overthewire.org closed.
+</pre>
+
+**Credenciais do Level 1**
+- Username: `bandit1`
+- Password: `NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL`
+
+## Resources
+[OverTheWire](https://overthewire.org/wargames/bandit/bandit1.html)
+
+[Manual Linux](https://man7.org/linux/man-pages/index.html)
 
