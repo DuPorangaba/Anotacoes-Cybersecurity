@@ -33,7 +33,7 @@ Um pouco sobre os comandos, sobre como funciona etc
 ***[# Passo3.]*** passo3
 
 ## Solução
-```
+<prep>
 [# Passo1.] 
 ...
 
@@ -42,8 +42,14 @@ Um pouco sobre os comandos, sobre como funciona etc
 
 [# Passo3.] 
 ...
-```
+</prep>
+
+**Credenciais para o Level:**
+- Username: bandit#
+- Password: ##############################
 
 ## Resources
 [OverTheWire](http_do_overthewire)
+
+[Template inspirado no The Girl Who Encrypts](https://medium.com/@theGirlWhoEncrypts/overthewire-bandit-level-5-level-6-155eda2a35a)
 
