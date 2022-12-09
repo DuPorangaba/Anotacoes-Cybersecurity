@@ -9,7 +9,7 @@
 - [X] [Resources](#resources)
 
 ## Goal
-A senha para o próximo level está em um arquivo chamado "-", que está no home.
+A senha para o próximo level está em um arquivo chamado **spaces in this filename** que está no home.
 
 ## Comandos para esse level
 `ls`, `cd`, `cat`, `file`, `du`, `find`
@@ -35,26 +35,24 @@ A senha para o próximo level está em um arquivo chamado "-", que está no home
 
 Concatena o arquivo para a saída padrão (terminal).
 
-Se não passa nenhum arquivo, or quando o arquivo é "-", lê a entrada padrão (terminal), ou seja, copia a entrada padrão para a saída padrão.
+Para ler arquivos que possuem espaços em seu nome, basta envolver o nome do arquivo em aspas.
 
-Para ler o arquivo "-", usa-se todo o caminho dele `./-`, em que: `.` refere-se ao diretório atual e `/` é raiz do drive atual, e juntos significam *dentro do diretório atual*
-
-O "-" se refere a STDIN/STDOUT que seria dev/stdin ou dev/stdout.
+*Nota: esse arquivo tem um nome muito grande, para facilitar podemos colocar a inicial do arquivo e clicar em TAB, o nome será completado*
 
 ## Write up
 **Informações**
 - Host Name: `bandit.labs.overthewire.org`
-- Username: `bandit1`
-- Password: `NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL`
+- Username: `bandit2`
+- Password: `rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi`
 - Port Number: `2220`
 
 **Passo a Passo**
 
 ***[# Passo1.]*** Conectar e logar no SSH usando as informações acima.
 
-***[# Passo2.]*** Rodar `ls`, para localizar o **-**.
+***[# Passo2.]*** Rodar `ls`, para localizar o **spaces in this filename**.
 
-***[# Passo3.]***  Para ver o que tem dentro do **-**  e obter a senha, rodar `cat ./-`.
+***[# Passo3.]***  Para ver o que tem dentro do **spaces in this filename**  e obter a senha, rodar `cat 'spaces in this filename'`.
 
 ***[# Passo4.]*** Para sair, rode `exit`
 
@@ -66,11 +64,11 @@ bandit0@bandit.labs.overthewire.org's password: <b>NH2SXQwcBdpmTEzi3bvBHMM9H66vV
 
 [# Passo2.] 
 <b>bandit0@bandit:~$</b> ls 
--
+spaces in this filename
 
 [# Passo3.] 
-<b>bandit0@bandit:~$</b> cat ./-
-rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+<b>bandit0@bandit:~$</b> cat 'spaces in this filename'
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
 
 [# Passo4.]
 <b>bandit0@bandit:~$</b> exit
@@ -78,9 +76,9 @@ logout
 Connection to bandit.labs.overthewire.org closed.
 </pre>
 
-**Credenciais do Level 2**
-- Username: `bandit2`
-- Password: `rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi`
+**Credenciais do Level 3**
+- Username: `bandit3`
+- Password: `aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG`
 
 ## Resources
 [OverTheWire](https://overthewire.org/wargames/bandit/bandit2.html)
