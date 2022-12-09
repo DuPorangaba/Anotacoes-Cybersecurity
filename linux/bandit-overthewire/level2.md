@@ -60,7 +60,7 @@ Para ler arquivos que possuem espaços em seu nome, basta envolver o nome do arq
 <pre>
 [# Passo1.] 
 <b>> ssh bandit1@bandit.labs.overthewire.org -p 2220</b>
-bandit0@bandit.labs.overthewire.org's password: <b>NH2SXQwcBdpmTEzi3bvBHMM9H66vVXjL</b>
+bandit0@bandit.labs.overthewire.org's password: <b>rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi</b>
 
 [# Passo2.] 
 <b>bandit0@bandit:~$</b> ls 
@@ -84,5 +84,3 @@ Connection to bandit.labs.overthewire.org closed.
 [OverTheWire](https://overthewire.org/wargames/bandit/bandit2.html)
 
 [Manual Linux](https://man7.org/linux/man-pages/index.html)
-
-Para mais, pesquise [dashed filename](https://www.google.com/search?q=dashed+filename)
