@@ -29,15 +29,13 @@ A senha para o próximo level está em um arquivo escondido no diretório **inhe
 
 ## Teoria
 
-**cat**
+**ls**
 
-`cat [OPTION] [FILE]`
+`ls [OPTION] [FILE]`
 
-Concatena o arquivo para a saída padrão (terminal).
+Lista informações sobre os ARQUIVOs, by default o diretório atual.
 
-Para ler arquivos que possuem espaços em seu nome, basta envolver o nome do arquivo em aspas.
-
-*Nota: esse arquivo tem um nome muito grande, para facilitar podemos colocar a inicial do arquivo e clicar em TAB, o nome será completado*
+Para listar todos os arquivos, mesmos aqueles "escondidos" que começam com ".", use a flag -a  ou --all.
 
 ## Write up
 **Informações**
@@ -50,25 +48,37 @@ Para ler arquivos que possuem espaços em seu nome, basta envolver o nome do arq
 
 ***[# Passo1.]*** Conectar e logar no SSH usando as informações acima.
 
-***[# Passo2.]*** Rodar `ls`, para localizar o **spaces in this filename**.
+***[# Passo2.]*** Rodar `ls`, para localizar o **inhere**.
 
-***[# Passo3.]***  Para ver o que tem dentro do **spaces in this filename**  e obter a senha, rodar `cat 'spaces in this filename'`.
+***[# Passo3.]*** Para entrar dentro do diretório **inhere**, rode `cd inhere`. 
 
-***[# Passo4.]*** Para sair, rode `exit`
+***[# Passo4.]*** Para ver todos os arquivos dentro de um diretório, rode `ls -a`.
+
+***[# Passo5.]*** Depois de ter descoberto o arquivo `.hidden`, use o `cat .hidden`, para obter a senha
+
+***[# Passo6.]*** Para sair, rode `exit`
 
 ## Solução
 <pre>
 [# Passo1.] 
-<b>> ssh bandit1@bandit.labs.overthewire.org -p 2220</b>
+<b>> ssh bandit3@bandit.labs.overthewire.org -p 2220</b>
 bandit0@bandit.labs.overthewire.org's password: <b>aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG</b>
 
 [# Passo2.] 
 <b>bandit0@bandit:~$</b> ls 
-spaces in this filename
+inhere
 
 [# Passo3.] 
-<b>bandit0@bandit:~$</b> cat 'spaces in this filename'
-aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+<b>bandit0@bandit:~$</b> cd inhere
+<b>bandit0@bandit:~/inhere$</b> 
+
+[# Passo4.] 
+<b>bandit0@bandit:~/inhere$</b> ls -a
+. .. .hidden
+
+[# Passo5.] 
+<b>bandit0@bandit:~/inhere$</b> cat .hidden
+2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
 
 [# Passo4.]
 <b>bandit0@bandit:~$</b> exit
@@ -76,9 +86,9 @@ logout
 Connection to bandit.labs.overthewire.org closed.
 </pre>
 
-**Credenciais do Level 3**
-- Username: `bandit3`
-- Password: `aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG`
+**Credenciais do Level 4**
+- Username: `bandit4`
+- Password: `2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe`
 
 ## Resources
 [OverTheWire](https://overthewire.org/wargames/bandit/bandit2.html)
