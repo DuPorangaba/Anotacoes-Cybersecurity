@@ -42,8 +42,8 @@ Para vermos o tipo de todos arquivos dentro da pasta, podemos utilizar o [caract
 ## Write up
 **Informações**
 - Host Name: `bandit.labs.overthewire.org`
-- Username: `bandit3`
-- Password: `aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG`
+- Username: `bandit4`
+- Password: `2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe`
 - Port Number: `2220`
 
 **Passo a Passo**
