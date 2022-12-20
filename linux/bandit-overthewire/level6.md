@@ -98,6 +98,6 @@ Connection to bandit.labs.overthewire.org closed.
 - Password: `z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S`
 
 ## Resources
-[OverTheWire](https://overthewire.org/wargames/bandit/bandit6.html)
+[OverTheWire](https://overthewire.org/wargames/bandit/bandit7.html)
 
 [Manual Linux](https://man7.org/linux/man-pages/index.html)
