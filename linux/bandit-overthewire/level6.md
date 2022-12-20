@@ -3,9 +3,9 @@
 
 - [X] [Goal](#goal)
 - [X] [Comandos para o desafio](#comandos-para-esse-level)
-- [ ] [Um pouco de Teoria](#teoria)
-- [ ] [Write Up](#write-up)
-- [ ] [Solução](#solução)
+- [X] [Um pouco de Teoria](#teoria)
+- [X] [Write Up](#write-up)
+- [X] [Solução](#solução)
 - [X] [Resources](#resources)
 
 ## Goal
@@ -47,7 +47,7 @@ Para procurar pelas propriedades usaremos flags:
 >
 >Se rodarmos o `find` com todas as propriedades acima, teremos a resposta de *Permission denied* para vários diretórios. E teriamos que buscar por um único que não deu *Permission denied*.
 >
->image.png
+>![image](https://user-images.githubusercontent.com/62816035/208774251-4de50e26-feb1-4d7f-bbff-be65012b2a03.png)
 >
 >A fim de minizar essa quantidade de resposta e achar apenas a que precisamos usaremos `2>/dev/null`, que significa que estamos direcionando(>) os erros (standard error é representado pelo número 2)  para um diretório (/dev/null). 
 >
