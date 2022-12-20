@@ -1,11 +1,11 @@
 # Level 5
 **Tópicos**
 
-- [] [Goal](#goal)
+- [ ] [Goal](#goal)
 - [X] [Comandos para o desafio](#comandos-para-esse-level)
-- [] [Um pouco de Teoria](#teoria)
-- [] [Write Up](#write-up)
-- [] [Solução](#solução)
+- [ ] [Um pouco de Teoria](#teoria)
+- [ ] [Write Up](#write-up)
+- [ ] [Solução](#solução)
 - [X] [Resources](#resources)
 
 ## Goal
