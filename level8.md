@@ -1,15 +1,15 @@
-# Level 7
+# Level 8
 **Tópicos**
 
 - [X] [Goal](#goal)
 - [X] [Comandos para o desafio](#comandos-para-esse-level)
-- [X] [Um pouco de Teoria](#teoria)
-- [X] [Write Up](#write-up)
-- [X] [Solução](#solução)
-- [X] [Resources](#resources)
+- [ ] [Um pouco de Teoria](#teoria)
+- [ ] [Write Up](#write-up)
+- [ ] [Solução](#solução)
+- [ ] [Resources](#resources)
 
 ## Goal
-A senha para o próximo level está no arquivo **data.txt** perto da palavra **millionth** 
+A senha para o próximo level está em um arquivo **data.txt** e é a única linha do texto que apenas ocorre uma vez.
 
 ## Comandos para esse level
 `man`, `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
@@ -34,73 +34,36 @@ A senha para o próximo level está no arquivo **data.txt** perto da palavra **m
 
 ## Teoria
 
-Este level pode ser resolvido de duas maneiras. 
-
-**1º Modo**
-
-Usaremos o comando `grep`. 
-
-A sintaxe é `grep [OPTION...] PATTERNS [FILE...]`, 
-
-em que, 
-
-OPTION são as flags
-
-PATTERNS é o que estamos buscando
-
-FILE são os arquivos
-
----
-
-**2º Modo**
-
-Usaremos o `grep` e o `cat`, atráves do piping.
-
-O **piping** é uma forma de redirecionamento, o output de um comando serve de input do próximo comando. Dessa forma, o Pipe serve para usar dois ou mais comandos.
-
-`cat [FILE] | grep [OPTION] PATTERNS`
 
 
 ## Write up
 **Informações**
 - Host Name: `bandit.labs.overthewire.org`
--  Username: `bandit7`
-- Password: `z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S`
+-  Username: `bandit8`
+- Password: `TESKZC0XvTetK0S9xNwm25STk5iWrBvP`
 - Port Number: `2220`
 
 **Passo a Passo**
 
 ***[# Passo1.]*** Conectar e logar no SSH usando as informações acima.
 
-***[# Passo2.]*** Rodar `ls` para localizar o arquivo **data.txt**, ele está no *home director* mesmo.
-
-***[# Passo3.]*** Para achar a senha usaremos `grep "millionth" data.txt`
-
-***[# Passo4.]*** Para sair, rode `exit`
+***[# Passo*.]*** Para sair, rode `exit`
 
 ## Solução
 <pre>
 [# Passo1.] 
-<b>> ssh bandit7@bandit.labs.overthewire.org -p 2220</b>
-bandit7@bandit.labs.overthewire.org's password: <b>z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S</b>
+<b>> ssh bandit8@bandit.labs.overthewire.org -p 2220</b>
+bandit8@bandit.labs.overthewire.org's password: <b>TESKZC0XvTetK0S9xNwm25STk5iWrBvP</b>
 
-[# Passo2.]
-<b>bandit7@bandit:~$</b> ls
-data.txt
-
-[# Passo3.]
-<b>bandit7@bandit:~$</b> grep "millionth" data.txt
-millionth       TESKZC0XvTetK0S9xNwm25STk5iWrBvP
-
-[# Passo4.] 
-<b>bandit7@bandit:~$</b> exit
+[# Passo*.] 
+<b>bandit8@bandit:~$</b> exit
 logout                                                             
 Connection to bandit.labs.overthewire.org closed.
 </pre>
 
-**Credenciais do Level 8**
-- Username: `bandit8`
-- Password: `TESKZC0XvTetK0S9xNwm25STk5iWrBvP`
+**Credenciais do Level 9**
+- Username: `bandit`
+- Password: ``
 
 ## Resources
 [OverTheWire](https://overthewire.org/wargames/bandit/bandit8.html)
