@@ -1,15 +1,15 @@
-# Level 8
+# Level 10
 **Tópicos**
 
 - [X] [Goal](#goal)
 - [X] [Comandos para o desafio](#comandos-para-esse-level)
-- [ ] [Um pouco de Teoria](#teoria)
-- [ ] [Write Up](#write-up)
-- [ ] [Solução](#solução)
-- [ ] [Resources](#resources)
+- [X] [Um pouco de Teoria](#teoria)
+- [X] [Write Up](#write-up)
+- [X] [Solução](#solução)
+- [X] [Resources](#resources)
 
 ## Goal
-A senha para o próximo level está em um arquivo **data.txt** e é a única linha do texto que apenas ocorre uma vez.
+A senha para o próximo level está em um arquivo **data.txt** que contém dados codificados em base64.
 
 ## Comandos para esse level
 `man`, `grep`, `sort`, `uniq`, `strings`, `base64`, `tr`, `tar`, `gzip`, `bzip2`, `xxd`
@@ -33,39 +33,55 @@ A senha para o próximo level está em um arquivo **data.txt** e é a única lin
  **Obs:** Para saber mais informações sobre como usar os comandos, possíveis flags, etc. Use `comando --help` para obter um "resumo" do manual, ou `man comando` para acessar o manual do comando.
 
 ## Teoria
+**Resolvendo o problema**
+Para codificar e decodificar dados em base64, usa-se o comando `base64`. 
 
+No caso de decodificar, devemos passar a flag `-d`.
 
+`base64 [OPTION]... [FILE]`
 
 ## Write up
 **Informações**
 - Host Name: `bandit.labs.overthewire.org`
--  Username: `bandit8`
-- Password: `TESKZC0XvTetK0S9xNwm25STk5iWrBvP`
+-  Username: `bandit10`
+- Password: `G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s`
 - Port Number: `2220`
 
 **Passo a Passo**
 
 ***[# Passo1.]*** Conectar e logar no SSH usando as informações acima.
 
-***[# Passo*.]*** Para sair, rode `exit`
+***[# Passo2.]*** Confirmar a existência do arquivo **data.txt**, usamos `ls`
+
+***[# Passo3.]*** Usar `base64` para decodificar os dados dentro do arquivo **data.txt** e assim conseguir a senha
+
+***[# Passo4.]*** Para sair, rode `exit`
 
 ## Solução
 <pre>
 [# Passo1.] 
-<b>> ssh bandit8@bandit.labs.overthewire.org -p 2220</b>
-bandit8@bandit.labs.overthewire.org's password: <b>TESKZC0XvTetK0S9xNwm25STk5iWrBvP</b>
+<b>> ssh bandit10@bandit.labs.overthewire.org -p 2220</b>
+bandit10@bandit.labs.overthewire.org's password: <b>G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s</b>
 
-[# Passo*.] 
-<b>bandit8@bandit:~$</b> exit
+[# Passo2.] 
+<b>bandit10@bandit:~$</b> ls 
+data.txt
+
+[# Passo3.] 
+<b>bandit10@bandit:~$</b> base64 -d data.txt
+The password is 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
+
+[# Passo4.] 
+<b>bandit10@bandit:~$</b> exit
 logout                                                             
 Connection to bandit.labs.overthewire.org closed.
 </pre>
 
-**Credenciais do Level 9**
-- Username: `bandit`
-- Password: ``
+**Credenciais do Level 11**
+- Username: `bandit11`
+- Password: `6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM`
 
 ## Resources
-[OverTheWire](https://overthewire.org/wargames/bandit/bandit8.html)
+[OverTheWire](https://overthewire.org/wargames/bandit/bandit11.html)
 
 [Manual Linux](https://man7.org/linux/man-pages/index.html)
