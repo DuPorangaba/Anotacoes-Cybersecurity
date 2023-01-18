@@ -50,7 +50,7 @@ Para se conectar a um serviço (como client) em uma rede, a sintaxe do comando �
 
 ***[# Passo2.]*** Usando `nc` nos conectar com o localhost port 30000 e iremos enviar a senha.
 
-***[# Passo*.]*** Para sair, rode `exit`
+***[# Passo3.]*** Para sair, rode `exit`
 
 ## Solução
 <prep>
@@ -63,7 +63,7 @@ bandit14@bandit.labs.overthewire.org's password: <b>fGrHPx402xGC7U7rXKDaxiWFTOiF
 >fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
  Correct!                                                              jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
 
-[# Passo*.] 
+[# Passo3.] 
 <b>bandit14@bandit:~$</b> exit
 logout                                                             
 Connection to bandit.labs.overthewire.org closed.
