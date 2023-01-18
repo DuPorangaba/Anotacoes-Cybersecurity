@@ -26,11 +26,11 @@ Um pouco sobre os comandos, sobre como funciona etc
 
 **Passo a Passo**
 
-***[# Passo1.]*** passo1
+***[# Passo1.]*** Conectar e logar no SSH usando as informações acima.
 
 ***[# Passo2.]*** passo2
 
-***[# Passo3.]*** passo3
+***[# Passo*.]*** Para sair, rode `exit`
 
 ## Solução
 <prep>
