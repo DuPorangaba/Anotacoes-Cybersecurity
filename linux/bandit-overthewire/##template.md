@@ -35,13 +35,16 @@ Um pouco sobre os comandos, sobre como funciona etc
 ## Solução
 <prep>
 [# Passo1.] 
-...
+<b>> ssh bandit#@bandit.labs.overthewire.org -p 2220</b>
+bandit#@bandit.labs.overthewire.org's password: <b>senhaDoLevelemQueEsta</b>
 
 [# Passo2.]
 ...
 
-[# Passo3.] 
-...
+[# Passo*.] 
+<b>bandit#@bandit:~$</b> exit
+logout                                                             
+Connection to bandit.labs.overthewire.org closed.
 </prep>
 
 **Credenciais para o Level:**
