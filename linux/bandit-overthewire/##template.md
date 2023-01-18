@@ -14,6 +14,17 @@ Enunciado resumido do Bandit
 ## Comandos para esse level
 `comando1`, `comando2`, `comando3`
 
+*Nota: Nem todos os comandos listados são necessários*
+
+ Comandos |                             O que faz?
+ ---------|--------
+ comando1 |explicando o que o comando faz
+ comando2 |explicando o que o comando faz
+ comando3 |explicando o que o comando faz
+
+ 
+ **Obs:** Para saber mais informações sobre como usar os comandos, possíveis flags, etc. Use `comando --help` para obter um "resumo" do manual, ou `man comando` para acessar o manual do comando.
+
 ## Teoria
 Um pouco sobre os comandos, sobre como funciona etc
 
