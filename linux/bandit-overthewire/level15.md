@@ -195,15 +195,15 @@ read R BLOCK
 Correct!
 JQttfApK4SeyHwDlI9SXGR50qclOAil1
 
-[# Passo*.] 
+[# Passo3.] 
 <b>bandit15@bandit:~$</b> exit
 logout                                                             
 Connection to bandit.labs.overthewire.org closed.
 </prep>
 
 **Credenciais para o Level 16:**
-- Username: bandit16
-- Password: JQttfApK4SeyHwDlI9SXGR50qclOAil1
+- Username: `bandit16`
+- Password: `JQttfApK4SeyHwDlI9SXGR50qclOAil1`
 
 ## Resources
 [OverTheWire](https://overthewire.org/wargames/bandit/bandit16.html)
