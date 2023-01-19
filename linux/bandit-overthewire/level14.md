@@ -74,7 +74,7 @@ Connection to bandit.labs.overthewire.org closed.
 - Password: `jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt`
 
 ## Resources
-[OverTheWire](http_do_overthewire)
+[OverTheWire](https://overthewire.org/wargames/bandit/bandit15.html)
 
 [Level14 -> 15](https://mayadevbe.me/posts/overthewir)
 
