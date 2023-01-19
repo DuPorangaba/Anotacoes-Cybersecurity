@@ -3,7 +3,7 @@
 
 - [X] [Goal](#goal)
 - [X] [Comandos para o desafio](#comandos-para-esse-level)
-- [ ] [Um pouco de Teoria](#teoria)
+- [X] [Um pouco de Teoria](#teoria)
 - [X] [Write Up](#write-up)
 - [X] [Solução](#soluçao)
 - [X] [Resources](#resources)
