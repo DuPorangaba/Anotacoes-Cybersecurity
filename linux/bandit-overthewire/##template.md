@@ -1,11 +1,11 @@
 # Start
 **Tópicos**
 
-- [X] [Goal](#goal)
-- [X] [Comandos para o desafio](#comandos-para-esse-level)
-- [X] [Um pouco de Teoria](#teoria)
-- [X] [Write Up](#write-up)
-- [X] [Solução](#soluçao)
+- [ ] [Goal](#goal)
+- [ ] [Comandos para o desafio](#comandos-para-esse-level)
+- [ ] [Um pouco de Teoria](#teoria)
+- [ ] [Write Up](#write-up)
+- [ ] [Solução](#soluçao)
 - [X] [Resources](#resources)
 
 ## Goal
@@ -59,8 +59,8 @@ Connection to bandit.labs.overthewire.org closed.
 </prep>
 
 **Credenciais para o Level:**
-- Username: bandit#
-- Password: ##############################
+- Username: `bandit#`
+- Password: `##############################`
 
 ## Resources
 [OverTheWire](http_do_overthewire)
