@@ -3,7 +3,7 @@
 
 - [X] [Goal](#goal)
 - [X] [Comandos para o desafio](#comandos-para-esse-level)
-- [ ] [Um pouco de Teoria](#teoria)
+- [X] [Um pouco de Teoria](#teoria)
 - [X] [Write Up](#write-up)
 - [X] [Solução](#soluçao)
 - [X] [Resources](#resources)
@@ -232,14 +232,14 @@ Switched to a new branch 'dev'
     +- password: <no passwords in production!>
 
 
-[# Passo*.] 
+[# Passo6.] 
 <b>bandit#@bandit:~$</b> exit
 logout                                                             
 Connection to bandit.labs.overthewire.org closed.
 </prep>
 
-**Credenciais para o Level 28:**
-- Username: `bandit28`
+**Credenciais para o Level 30:**
+- Username: `bandit30`
 - Password: `xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS`
 
 ## Resources
