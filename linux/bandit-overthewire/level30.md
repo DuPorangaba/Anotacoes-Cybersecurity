@@ -32,9 +32,13 @@ Git é um sistema de controle de versão para acompanhar as alterações em arqu
 
 *git tag*
 
+Cria, lista, deleta, ou verifica um objeto de tag assinado com GPG
+
 *git show*
 
+Mostra vários tipos de objetos. 
 
+O GIT tem diversos tipos de objetos, como: blobs, trees, tags and commits. [Para saber mais](https://matthew-brett.github.io/curious-git/git_object_types.html)
 
 *Observação*
 Os commits são enumerados de acordo com a distância deles para o passado. Podemos referenciar um commit como "HEAD~1", que seria o estado do repositório um commit no passado. Ou "HEAD~3", que seria o estado do repositório em três commits no passado.
