@@ -6,7 +6,7 @@ O objetivo da sala é fornecer uma introdução aos princípios básicos de rede
 - [X] [Modelo OSI](#modelo-osi)
 - [X] [Encapsulamento](#encapsulamento)
 - [X] [Modelo TCP/IP](#modelo-tcp/ip)
-- [] [Ping](#ping)
+- [X] [Ping](#ping)
 - [] [Traceroute](#traceroute)
 - [] [WHOIS](#whois)
 - [] [Dig](#dig)
@@ -166,3 +166,18 @@ O modelo TCP/IP foi introduzido pelo DoD americano em 1982 para fornecer um padr
 Mais tarde, o modelo OSI também foi introduzido pela Organização Internacional de Padronização (ISO); no entanto, é usado principalmente como um guia mais abrangente para o aprendizado, pois o modelo TCP/IP ainda é o padrão no qual a rede moderna se baseia.
 
 ## Ping
+O comando `ping` é usado quando queremos testar se uma conexão com um recurso remoto é possível. O recurso remoto pode ser um site na internet, ou um computador na sua internet (se você quiser checa se ele foi configurado corretamente).
+
+Ping usa o Protocolo ICMP, que é um dos protocolos TCP/IP um pouco menos conhecidos. O Protocolo ICMP funciona na camada de rede do modelo OSI, e na camada de Internet no modelo TCP/IP.
+
+A sintaxe básica do ping é `ping <target>`.
+
+Quando executamos o comando `ping` ele retorna o endereço IP do server que ele se conectou e não a URL requisitada. Assim, uma função secundária do Ping é determinar o endereço IP do server que está hospedando o site. 
+
+Uma das grandes vantagens do ping é que ele é praticamente onipresente em qualquer dispositivo habilitado para rede. Todos os sistemas operacionais oferecem suporte imediato e até mesmo a maioria dos dispositivos integrados pode usar ping!
+
+## Traceroute
+
+## WHOIS
+
+## Dig
