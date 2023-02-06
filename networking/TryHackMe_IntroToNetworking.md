@@ -3,13 +3,15 @@ Room: https://tryhackme.com/room/introtonetworking
 
 O objetivo da sala é fornecer uma introdução aos princípios básicos de redes.
 
+Além dessa sala que cobre o básico, se você deseja expandir seu conhecimento sobre teoria de redes, o CISCO Self Study Guide de Steve McQuerry é um ótimo recurso para trabalhar.
+
 - [X] [Modelo OSI](#modelo-osi)
 - [X] [Encapsulamento](#encapsulamento)
 - [X] [Modelo TCP/IP](#modelo-tcp/ip)
 - [X] [Ping](#ping)
-- [] [Traceroute](#traceroute)
-- [] [WHOIS](#whois)
-- [] [Dig](#dig)
+- [X] [Traceroute](#traceroute)
+- [X] [WHOIS](#whois)
+- [X] [Dig](#dig)
 
 ## Modelo OSI
 
@@ -177,7 +179,58 @@ Quando executamos o comando `ping` ele retorna o endereço IP do server que ele 
 Uma das grandes vantagens do ping é que ele é praticamente onipresente em qualquer dispositivo habilitado para rede. Todos os sistemas operacionais oferecem suporte imediato e até mesmo a maioria dos dispositivos integrados pode usar ping!
 
 ## Traceroute
+`Traceroute` pode ser usado para mapear o caminho que sua solicitação faz até a máquina de destino.
+
+A internet é composta muitos servidores e terminais diferentes, todos conectados em rede uns aos outros. Isso significa que, para chegar ao conteúdo que você realmente deseja, primeiro você precisa passar por vários outros servidores. 
+
+`Traceroute` permite que você veja cada uma dessas conexões, ou seja, você consegue ver cada etapa intermediária entre seu computador e o recurso que você solicitou.
+
+A sintaxe básica é: `traceroute <destination>`
+
+Por padrão, o utilitário traceroute do Windows (tracert) opera usando o mesmo protocolo ICMP que o ping utiliza, e o equivalente do Unix opera sobre UDP. Isso pode ser alterado com flags em ambas as instâncias.
 
 ## WHOIS
+Para não termos que ficar decorando diversos endereços de IP para conseguir acessar os sites que queremos, existem os domínios. Assim, os domínios estão associados a um endereço IP. 
+
+Os domínios são alugados por empresas chamadas registradores de domínio. Se você deseja um domínio, você se registra em um registrador e aluga o domínio por um determinado período de tempo.
+
+O comando `Whois` permite consultar para quem um nome de domínio está registrado.
+
+*Nota: para instalar whois use: `sudo apt update && sudo apt install whois`*
+
+A sintaxe básica é: `whois <domain>`. 
 
 ## Dig
+Um protocolo TCP/IP chamado DNS (Domain Name System) é responsável por converter a URL em um endereço IP.
+
+De maneira simplificada, DNS nos permite pedir a um servidor especial que nos forneça o endereço IP do site que estamos tentando acessar. 
+
+---
+**Como funciona o DNS de maneira mais detalhada**
+
+Você faz uma requisição a um site. 
+
+A primeira coisa que irá acontecer é que o seu computador irá checar no cache local se já tem guardado o endereço IP do site solicitado. Se sim, ótimo. Senão, vai para a próxima etapa.
+
+Assim, o computador irá enviar uma requisição para um servidor DNS recursivo. Os detalhes de um servidor DNS recursivo estão armazenados em seu roteador, já que muitos Provedores de Internet (Internet Service Providers - ISP) mantém seus próprios servidores recursivos, grandes empresas também controlam o seus próprios servidores recursivos. 
+
+Os servidores DNS recursivos armazenam um cache dos resultados para os domínios populares. No entanto, se o site solicitado não está no cache, o servidor recursivo irá enviar a requisição para um servidor _root name_ (servidor raiz DNS).
+
+Os servidores raiz DNS basicamente rastreiam os servidores DNS no próximo nível abaixo, escolhendo um apropriado para redirecionar sua solicitação. Esses servidores de nível inferior são chamados de servidores de domínio de nível superior (Top-Level Domain servers).
+
+Os servidores Top-Level Domain (TLD) são divididos em extensões. Por exemplo, se o site solicitado tem a extensão `.com` a requisição será redirecionada para um servidor TDL que lida com os domínios `.com`. Depois do servidor TDL receber a requisição ele enviará está para o servidor DNS Autoritativos. 
+
+Os servidores autoritativos são usados para armazenar registros DNS sobre os domínios. Ou seja, são os servidores que têm autoridade para fornecer informações de um domínio. 
+
+Quando sua solicitação chegar ao servidor autoritativo, ele enviará as informações relevantes de volta para você, permitindo que seu computador se conecte ao endereço IP por trás do domínio solicitado.
+
+---
+Esse processo ocorre automaticamente quando utilizamos um navegador web. Mas podemos fazer isso manualmente usando a ferramenta `dig`.
+
+A sintaxe básica é: `dig <domain> @<dns-server-ip>`
+
+É uma ferramenta muito útil para solução de problemas de rede.
+
+Uma informação interessante que o dig nos fornece é o TTL (Time To Live) do registro DNS consultado. Conforme mencionado anteriormente, quando seu computador consulta um nome de domínio, ele armazena os resultados em seu cache local. O TTL do registro informa ao seu computador quando parar de considerar o registro como válido - ou seja, quando ele deve solicitar os dados novamente, em vez de confiar na cópia em cache. O TTL é medido em segundos. E ele pode ser achado na segunda coluna da seção de resposta.
+
+
