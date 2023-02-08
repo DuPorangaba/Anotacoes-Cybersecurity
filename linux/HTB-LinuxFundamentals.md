@@ -38,4 +38,20 @@ System Utility |Disponibiliza ao usuário todas as funcionalidades do sistema op
 ## Hierarquia do sistema de arquivos
 O sistema operacional Linux é estruturado em uma hierarquia semelhante a uma árvore e está documentado no [Filesystem Hierarchy Standard (FHS)](https://www.pathname.com/fhs/). 
 
-
+Caminho     | Descrição
+------------|----------
+/           | O diretório de maior nível é o root filesystem. Ele contém todos os arquivos necessários para a inicialização do OS antes da montagem dos outros filesystem, assim como os arquivos necessários para inicializar os outros filesystem. Depois da inicialização, todos os outros filesystems são montados em pontos padrão de montagem como subdiretórios do root
+/bin        |Contém os comandos binários essenciais. (Binário)
+/boot       |Consiste no bootloader estático, executável do kernel, e todos os arquivos necessários para inicializar o Linux OS. (Bootloader)
+/dev        |Contém os arquivos de dispositivos para facilitar o acesso os dispositivos de hardware ligados ao sistema. (Devices - Dispositivos)
+/etc        |Arquivos de configuração dos sistema local. Arquivos de configuração para aplicativos também podem ser salvos aqui. (Et cetera)
+/home       |Cada usuário do sistema tem um subdiretório aqui para armazenamento
+/lib        |Arquivos de biblioteca compartilhada necessários para a inicialização do sistema. (Libraries - bibliotecas)
+/media      |Dispositivos externos de média removivéis, como drives USB, são montados aqui. 
+/mnt        |Ponto de montagem temporário para filesystems regulares. (Mount - Montagem)
+/opt        |Arquivos opcionais como ferramentas de terceiros podem ser salvos aqui. (Optional - Opcional)
+/root       |É o diretório home do usuário root
+/sbin       |Esse diretório contém executáveis usados para administração do sistema (sistema de arquivos binários). (System binaries - Sistemas binários)
+/tmp        |O OS e muitos programas usam esse diretório para armazenar arquivos temporários. Esse diretório é geralmente limpo na inicialização do sistema e pode ser excluído em outros momentos sem qualquer aviso. (Temporários)
+/usr        |Contém executáveis, bibliotecas, arquivos de manuais e etc. (User System Resources)
+/var        |Contém arquivos de dados variáveis, como arquivos de logs, caixas de entrada de email, arquivos relacionados a aplicativos web, arquivos cron, etc. 
