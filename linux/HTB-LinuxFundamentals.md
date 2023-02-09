@@ -2,6 +2,8 @@
 - [X] [Estrutura do Linux](#estrutura-do-linux)
 - [X] [Introdução ao Shell](#introdução-ao-shell)
 - [X] [Descrição do Prompt](#descrição-do-prompt)
+- [X] [Buscando Ajuda?](#precisa-de-uma-ajuda-aí)
+- [X] [Onde é que eu tô? Quem sou eu?](#informações-sobre-o-sistema)
 
 
 ## Estrutura do Linux
@@ -112,3 +114,50 @@ $
 ```
 
 O prompt do bash pode ser customizado e alterado de acordo com suas necessidade. De uma olhada [bashrcgenerator](https://bashrcgenerator.com/) [powerline](https://github.com/powerline/powerline)
+
+## Precisa de Uma Ajuda Aí
+Quando você precisar saber o que um certo comando/ferramenta faz ou saber mais sobre os seus paramêtros, temos as páginas de manual e ferramentas de ajuda "embutidas" no terminal.
+
+Nas páginas do manual, encontraremos os manuais detalhados com explicações detalhadas.
+```
+user@hostname[~]$ man <tool>
+```
+
+Se quisermos algo mais rápido só para nos relembramos de parâmetro em específico, sem precisar olhar para a documentação. Podemos usar sa ferramentas de ajuda.
+```
+user@hostname[~]$ <tool> --help
+
+ou
+
+user@hostname[~] <tool> -h
+```
+
+Outra ferramenta que pode ser útil no começo é o `apropos`. Cada página de manual tem uma breve descrição disponível dentro dela. Essa ferramenta pesquisa as descrições de instâncias de uma determinada palavra-chave.
+```
+user@hostname[~] apropos <keyword>
+```
+
+Outro recurso interessante se você tiver problemas para entender comandos longos é o site https://explainshell.com/
+
+## Informações sobre o sistema
+Comando | Descrição
+--------|-----------
+`whoami`|Exibe o nome de usuário atual.
+`id`    |Retorna a identidade dos usuários
+`hostname` |Define ou imprime o nome do sistema host atual. Ou seja, o computador em que estamos logados
+`uname` |Imprime informações básicas sobre o sistema operacional e o hardware
+`pwd`   |Retorna o nome do working directory
+`ifconfig` |É usado para atribuir ou visualizar um endereço para uma interface de rede e/ou configurar parâmetros de uma interface de rede
+`ip`    |Mostra ou manipula roteamento, dispositivos de rede, interfaces e túneis
+`netstat` |Mostra o status da rede
+`ss`    |Usado para investigar soquetes
+`ps`    |Mostra o status do processo
+`who`   |Exibe quem está logado
+`env`   |Imprime o ambiente ou define e executa comandos
+`lsblk` |Lista dispositivos bloqueados
+`lsusb` |Lista dispositivos USB
+`lsof`  |Lista arquivos abertos
+`lspci` |Lista dispositivos PCI
+
+### Logando via SSH
+Secure Shell (SSH) se refere a um protocolo que permite que clients acessem e executem comandos ou ações em computadores remotos. 
