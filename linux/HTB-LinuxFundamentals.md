@@ -87,3 +87,28 @@ Além disso, muitos processos podem ser facilmente automatizados com scripts men
 Além do Bash, também existem outros shells como Tcsh/Csh, Ksh, Zsh, Fish shell e outros.
 
 ## Descrição do Prompt
+O prompt do bash é fácil de entender. O formato pode ser mais ou menos assim:
+```
+<username>@<hostname><current working directory>$
+```
+O home directory do usuário está marcado com um til <~>, e é a pasta padrão quando logamos.
+```
+<username>@<hostname>[~]$
+```
+O cifrão representa um usuário. Se logarmos com o root, o caracter muda para um hashtag <#> e se parece com isso:
+```
+root@<hostname>[current working directory]#
+```
+Por exemplo, quando carregamos e executamos um shell no sistema alvo, podemos não ver o nome de usuário, o nome do host e o diretório de trabalho atual. Isso pode ocorrer porque a variável PS1 no ambiente não foi definida corretamente. Nesse caso, veríamos os seguintes prompts:
+
+**Unprivileged - User Shell Prompt**
+```
+$
+```
+
+**Privileged - Root Shell Prompt**
+```
+#
+```
+
+O prompt do bash pode ser customizado e alterado de acordo com suas necessidade. De uma olhada [bashrcgenerator](https://bashrcgenerator.com/) [powerline](https://github.com/powerline/powerline)
