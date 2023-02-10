@@ -161,3 +161,6 @@ Comando | Descrição
 
 ### Logando via SSH
 Secure Shell (SSH) se refere a um protocolo que permite que clients acessem e executem comandos ou ações em computadores remotos. 
+
+## Gerenciamento de Usuários
+
