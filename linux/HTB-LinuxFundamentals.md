@@ -4,6 +4,9 @@
 - [X] [Descrição do Prompt](#descrição-do-prompt)
 - [X] [Buscando Ajuda?](#precisa-de-uma-ajuda-aí)
 - [X] [Onde é que eu tô? Quem sou eu?](#informações-sobre-o-sistema)
+- [X] [Gerenciamento de Usuários](#gerenciamento-de-usuários)
+- [X] [Gerenciamento de Pacotes](#gerenciamento-de-pacotes)
+- [X] [Gerenciamento de Serviço e Processo](#gerenciamento-de-serviço-e-processo)
 
 
 ## Estrutura do Linux
@@ -163,4 +166,74 @@ Comando | Descrição
 Secure Shell (SSH) se refere a um protocolo que permite que clients acessem e executem comandos ou ações em computadores remotos. 
 
 ## Gerenciamento de Usuários
+O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
+
+Isso é importante, pois é muito comum que apenas alguns usuários de um grupo específico tem as permissões de visualizar e editar arquivos ou diretórios. 
+
+**Como executar um comando como um usuário diferente**
+Executando como um usuário
+```
+> user1@hostname[~]$ cat /etc/shadow
+
+cat: /etc/shadow: Permission denied
+```
+
+Executando como o root
+```
+> user1@hostname[~]$ sudo cat /etc/shadow
+
+root: <SNIP>:18395:0:99999:7:::
+daemon:*17737:0:99999:7:::
+bin:*:17737:0:99999:7:::
+<SNIP>
+```
+
+Comando | Descrição
+--------|-----------
+`sudo`  |Executa um comando como um usuário diferente. Atribuir poderes de administrador de maneira passageira. 
+`su`    |A utilidade `su` irá requisitar credenciais de usuário apropriadas via PAM e mudar para aquele user ID (the default is the superuser). Então, um shell é executado. Tem a função de troca de usuário ou a chamada do superusuário. Também, pode atribuir poderes de admin para uma janela do terminal.
+`useradd`|Cria um novo usuário ou atualiza a informação padrão do novo usuário
+`userdel`|Delete a conta de usuário e arquivos relacionados a conta
+`usermod`|Modifica a conta de um usuário
+`addgroup`|Adiciona um grupo ao sistema
+`delgroup`|Remove um grupo do sistema
+`passwd`|Muda a senha do usuário
+
+## Gerenciamento de Pacotes
+Pacotes são arquivos que contém binários de softwares, arquivos de configuração, informações sobre dependências, e acompanha os updates e upgrades. 
+
+Os sistemas de gerenciamento de pacotes fornecem os seguintes serviços: instalação de pacotes, resolução de dependências, um formato padrão dos pacotes binários, locais comuns de instalação e configuração, configuração e funcionalidade adicionais relacionadas ao sistema, e controle de qualidade.
+
+Comando | Descrição
+--------|-----------
+`dpkg`  |É uma ferramenta para instalar, construir, remover, gerenciar pacotes Debian. O front-end principal e mais amigável para o dpkg é o aptitude.
+`apt`   | Apt fornece uma interface de linha de comando de alto nível para o sistema de gerenciamento de pacotes.
+`aptitude` |Aptitude é uma alternativa ao apt e é uma interface de alto nível para o gerenciador de pacote
+`snap`  |Instala, configura, atualiza, e remove os pacotes snap. Os Snaps permitem a distribuição segura dos aplicativos e utilitários mais recentes para nuvem, servidores, desktops e internet das coisas.
+`gem`   |Gem é um front-end para o RubyGems, o gerenciador de pacotes padrão do Ruby
+`pip`   |Pip é um instalador de pacotes Python, recomendado para instalar pacotes Python que não estão disponíveis no arquivo Debian. Ele pode funcionar com repositórios de controle de versão, registra a saída extensivamente e evita instalações parciais baixando todos os requisitos antes de iniciar a instalação. 
+`git`   |é um sistema de controle de revisão rápido, escalável e distribuído com um conjunto de comandos extraordinariamente rico que fornece operações de alto nível e acesso total aos internos.
+
+### Advanced Package Manager (APT)
+Distribuições Linux baseadas no Debian usam o APT.
+
+Um pacote é um arquivo que contém múltiplos arquivos ".deb". 
+
+O utilitário `dpkg` é usado para instalar programas do arquivo ".deb" associado.
+
+O `APT` facilita a atualização e instalação dos programas, já que muitos deles possuem dependências. 
+
+Quando instalamos um programa de um arquivo ".deb" autônomo, poderemos ter problemas com as dependências e precisaremos instalar arquivos adicionais. O `APT` torna isso mais fácil e eficiente empacotando todas as dependências necessárias para instalar um programa. 
+
+**Como os gerenciadores de pacote buscam os programas**
+
+Cada distribuição do Linux usa repositórios de software que são atualizados com frequência. Quando atualizamos um programa ou instalamos um novo, o sistema consulta esses repositórios em busca do pacote desejado. Os repositórios podem ser rotulados como estáveis, em teste ou instáveis. A maioria das distribuições Linux utiliza o repositório mais estável ou "principal".
+
+O `APT` usa um banco de dados chamado APT cache. Isso é usado para fornecer informações sobre pacotes instalados em nosso sistema offline.
+
+### DPKG
+
+Também podemos instalar os programas e ferramentas dos repositórios separadamente. 
+
+## Gerenciamento de Serviço e Processo
 
