@@ -96,8 +96,8 @@ A partir de agora você consegue acessar o Kali Linux apenas pela linha de comad
 ## Instalando mais ferramentas
 A versão WSL2 instalada do Kali vem apenas com o básico, pois é a instalação mínima. Para instalar outras ferramentas que vem com o Kali, veja <https://www.kali.org/docs/general-use/metapackages/>.
 
-## Usando o Kali no Terminal Windows
 
 ## Referências
 [Vídeo do NetworkChuck](https://www.youtube.com/watch?v=AfVH54edAHU&ab_channel=NetworkChuck)
+
 [Guia da Microsoft](https://learn.microsoft.com/pt-br/windows/wsl/install-manual)
