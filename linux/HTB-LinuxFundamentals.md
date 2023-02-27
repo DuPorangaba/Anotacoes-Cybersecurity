@@ -236,4 +236,144 @@ O `APT` usa um banco de dados chamado APT cache. Isso é usado para fornecer inf
 Também podemos instalar os programas e ferramentas dos repositórios separadamente. 
 
 ## Gerenciamento de Serviço e Processo
+Há dois tipos de serviços: 
+- Internos, serviços relevantes que são necessários para a inicialização do sistema;
+- Que são instalados pelo usuário, que incluí todos os serviços do servidor
 
+Esses serviços são executados em segundo palno sem qualquer interação com usuário. Eles são chamados de **daemons** e são identificados por uma letra **d** no final do nome do programa, por exemplo, sshd ou systemd.
+
+**Systemd** é um daemon de _Init process_ (primeiro processo iniciado durante a inicialização), como ele é o primeiro iniciado, ele recebe o ID do processo (PID) 1. Ele monitora e cuida da inicialização e finalização ordenada de outros serviços.
+
+Todos os processos tem um PID atribuído que pode ser visto  em `/proc/`  com o seu número correspondente. Um processo pode ter um ID do processo pai (PPID), então, ele é conhecido como um processo filho.
+
+### Systemctl
+É um comando utilizado para gerenciar o Systemd, que é um gerenciador de sistema e serviço.
+
+### Kill a Process
+Um processo pode estar nos seguintes estados: 
+- Rodando (Running)
+- Esperando (Waiting - esperando por um evento ou um recurso do sistema)
+- Parado (Stopped)
+- Zombie (parado, mas ainda tem uma entrada na tabela de processos)
+
+Os processos podem ser controlados usando `kill`, `pkill`, `pgrep` e `killall`. 
+
+Para interagir com os processos, devemos enviar um sinal para eles. Podemos ver todos os sinais usando o comando:
+
+```
+user1@hostname[~]$ kill -l
+
+1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL       5) SIGTRAP
+ 6) SIGABRT      7) SIGBUS       8) SIGFPE       9) SIGKILL     10) SIGUSR1
+11) SIGSEGV     12) SIGUSR2     13) SIGPIPE     14) SIGALRM     15) SIGTERM
+16) SIGSTKFLT   17) SIGCHLD     18) SIGCONT     19) SIGSTOP     20) SIGTSTP
+21) SIGTTIN     22) SIGTTOU     23) SIGURG      24) SIGXCPU     25) SIGXFSZ
+26) SIGVTALRM   27) SIGPROF     28) SIGWINCH    29) SIGIO       30) SIGPWR
+31) SIGSYS      34) SIGRTMIN    35) SIGRTMIN+1  36) SIGRTMIN+2  37) SIGRTMIN+3
+38) SIGRTMIN+4  39) SIGRTMIN+5  40) SIGRTMIN+6  41) SIGRTMIN+7  42) SIGRTMIN+8
+43) SIGRTMIN+9  44) SIGRTMIN+10 45) SIGRTMIN+11 46) SIGRTMIN+12 47) SIGRTMIN+13
+48) SIGRTMIN+14 49) SIGRTMIN+15 50) SIGRTMAX-14 51) SIGRTMAX-13 52) SIGRTMAX-12
+53) SIGRTMAX-11 54) SIGRTMAX-10 55) SIGRTMAX-9  56) SIGRTMAX-8  57) SIGRTMAX-7
+58) SIGRTMAX-6  59) SIGRTMAX-5  60) SIGRTMAX-4  61) SIGRTMAX-3  62) SIGRTMAX-2
+63) SIGRTMAX-1  64) SIGRTMAX
+```
+
+Os sinais mais usados são:
+
+Sinais  | Descrição
+--------|-----------
+1       |SIGHUP - É enviado para um processo quando o terminal que o controla foi fechado
+2       |SIGINT - Enviado quando o usuário pressiona `[Ctrl] + C` no terminal para interromper um processo
+3       |SIGQUIT - Enviado quando um usuário pressiona `[Ctrl] + D` para sair
+9       |SIGKILL - Imediatamente mata um processo sem operações de limpeza
+15      |SIGTERM - Termina o programa
+19      |SIGSTOP - Para o programa. Não pode mais ser manuseado.
+20      |SIGSTP - Enviado quando um usuário pressiona `[Ctrl] + Z` para requisitar que um serviço seja suspenso. O usuário pode manusear o serviço mais tarde.
+
+### Background a Process
+Às vezes, precisamos colocar um processo que iniciamos em segundo plano para continuarmos usando a atual sessão para interagir com o sistema ou iniciar outros pocessos. Para isso, podemos suspender o processo usando `[Ctrl] + Z`, ou colocar eles em segundo plano.
+
+Suspendendo processos.
+```
+user1@hostname[~]$ ping -c 10 www.google.com
+
+user1@hostname[~]$ vim tmpfile
+[Ctrl + Z]
+
+[2]+  Stopped                 vim tmpfile
+```
+
+Todos os processos em segundo plano podem ser vistos usando o seguinte comando:
+```
+user1@hostname[~]$ jobs
+
+[1]+  Stopped                 ping -c 10 www.google.com
+[2]+  Stopped                 vim tmpfile
+
+```
+
+O `[Ctrl] + Z` suspende todos os processos, e eles não serão mais executados. Para mantê-los rodando em segundo plano, temos que digitar o comando `bg` para colocar o processo em segundo plano.
+
+```
+user1@hostname[~]$ bg
+
+user1@hostname[~]$ 
+---  www.google.com ping statistics ---
+10 packets transmitted, 0 received, 100% packet loss, time 113482ms
+
+[ENTER]
+[1]+  Exit 1                  ping -c 10  www.google.com
+
+```
+
+Outra opção para colocar um processo em segundo plano é colocar um sinal de AND (&) no final do comando.
+
+```
+user1@hostname[~]$ ping -c 10 www.google.com &
+
+[1] 10825
+PING www.google.com (172.67.1.1) 56(84) bytes of data.
+```
+
+Os processos em segundo plano não requerem interação do usuário e podemos usar a mesma sessão de shell sem esperar até que o processo termine primeiro. Assim que a verificação ou processo terminar seu trabalho, seremos notificados pelo terminal de que o processo foi concluído.
+
+### Foreground a Process
+Se quisermos colocar o processo em segundo plano em primeiro plano e interagir com ele novamente, podemos usar o comando `fg <ID>`.
+
+```
+Daradue@htb[/htb]$ fg 1
+ping -c 10 www.google.com
+
+--- www.google.com ping statistics ---
+10 packets transmitted, 0 received, 100% packet loss, time 9206ms
+```
+
+### Executando Múltiplos Comandos
+Existem três possibilidades para executar vários comandos, um após o outro. Estes são separados por:
+- Ponto e vírgula (;)
+- Dois Es comerciais (&&)
+- Pipes (|)
+
+A diferença entre eles está no tratamento dos processos anteriores e depende se o processo anterior foi concluído com sucesso ou com erros.
+
+O **ponto e vírgula** (;) é um separador de comando e executa os comandos ignorando os resultados e erros dos comandos anteriores.
+```
+user1@htb[/htb]$ echo '1'; ls MISSING_FILE; echo '3'
+
+1
+ls: cannot access 'MISSING_FILE': No such file or directory
+3
+
+```
+
+Os **&&** roda os comandos um após o outro. Se houver um erro em um dos comandos, os seguintes não serão mais executados e todo o processo será interrompido.
+
+```
+user1@htb[/htb]$ echo '1'; ls MISSING_FILE; echo '3'
+
+1
+ls: cannot access 'MISSING_FILE': No such file or directory
+
+```
+
+E os **pipes (|)** dependem não apenas da operação correta e sem erros dos processos anteriores, mas também dos resultados dos processos anteriores. 
