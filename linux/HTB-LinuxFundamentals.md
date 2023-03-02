@@ -7,6 +7,7 @@
 - [X] [Gerenciamento de Usuários](#gerenciamento-de-usuários)
 - [X] [Gerenciamento de Pacotes](#gerenciamento-de-pacotes)
 - [X] [Gerenciamento de Serviço e Processo](#gerenciamento-de-serviço-e-processo)
+- [X] [Servidores Web](#servidores-web)
 
 
 ## Estrutura do Linux
@@ -376,4 +377,20 @@ ls: cannot access 'MISSING_FILE': No such file or directory
 
 ```
 
-E os **pipes (|)** dependem não apenas da operação correta e sem erros dos processos anteriores, mas também dos resultados dos processos anteriores. 
+E os **pipes (|)** dependem não apenas da operação correta e sem erros dos processos anteriores, mas também dos resultados dos processos anteriores.
+
+## Servidores Web
+Um componente essencial no linux é a sua comunicação com servidores web. E há diversas maneiras de configurar um servidor web nos sistemas Linux.
+
+### Apache
+Apache é um dos servidores web mais utilizado, ao lado do IIS e Nginx.
+
+Com o apache podemos usar módulos que criptografa a comunicação entre o navegador e o servidor (mod_ssl), usar um servidor proxy (mod_proxy), manipular complexos dados dos cabeçalhos HTTP (mod_header) ou de URLs (mod_rewrite).
+
+O Apache nos permite criar páginas web dinamicamente usando linguagens de server-side scripting, como PHP, Perl or Ruby, ou outras linguagens como Python, Javascript, Lua e .NET.
+
+**Instalando o Apache**
+```
+apt install apache2 -y
+
+```
