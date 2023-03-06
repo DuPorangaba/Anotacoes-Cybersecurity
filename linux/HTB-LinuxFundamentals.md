@@ -1,13 +1,28 @@
 # Linux Fundamentals
+**Introdução**
 - [X] [Estrutura do Linux](#estrutura-do-linux)
 - [X] [Introdução ao Shell](#introdução-ao-shell)
+
+**Shell**
 - [X] [Descrição do Prompt](#descrição-do-prompt)
 - [X] [Buscando Ajuda?](#precisa-de-uma-ajuda-aí)
 - [X] [Onde é que eu tô? Quem sou eu?](#informações-sobre-o-sistema)
+
+**Workflow**
+- [ ] [Navegação](#)
+- [ ] [Trabalhando com Arquivos e Diretórios](#)
+- [ ] [Editando Arquivos](#)
+- [ ] [Achando Arquivos e Diretórios](#)
+- [ ] [Descritores de arquivo e redirecionamentos](#)
+- [ ] [Filtrando Contéudos](#)
+- [ ] [Expressões Regulares](#)
+- [ ] [Gerenciando Permissões](#)
+
+**Gerenciando o Sistema**
 - [X] [Gerenciamento de Usuários](#gerenciamento-de-usuários)
 - [X] [Gerenciamento de Pacotes](#gerenciamento-de-pacotes)
 - [X] [Gerenciamento de Serviço e Processo](#gerenciamento-de-serviço-e-processo)
-- [X] [Servidores Web](#servidores-web)
+- [ ] [Trabalhando com Servidores Web](#servidores-web)
 
 
 ## Estrutura do Linux
@@ -165,6 +180,36 @@ Comando | Descrição
 
 ### Logando via SSH
 Secure Shell (SSH) se refere a um protocolo que permite que clients acessem e executem comandos ou ações em computadores remotos. 
+
+## Navegação
+Antes de andar pelo sistema, precismos saber onde estamos. Para isso, usamos o comando `pwd` (print working directory)
+```
+cry0l1t3@htb[~]$ pwd
+
+/home/cry0l1t3
+```
+
+Para listar os contéudos que estão dentro de um diretório, usamos `ls`. 
+```
+cry0l1t3@htb[~]$ ls
+
+Desktop  Documents  Downloads  Music  Pictures  Public  Templates  Videos
+```
+
+Quando apenas usamos o `ls`, apenas nos mostrará os arquivos e diretórios.
+
+Se quisermos mais informações sobre esses arquivos e diretórios podemos usar `-l`.
+```
+cry0l1t3@htb[~]$ ls -l
+
+total 32
+drwxr-xr-x 2 cry0l1t3 htbacademy 4096 Nov 13 17:37 Desktop
+drwxr-xr-x 2 cry0l1t3 htbacademy 4096 Nov 13 17:34 Documents
+drwxr-xr-x 3 cry0l1t3 htbacademy 4096 Nov 15 03:26 Downloads
+...
+```
+
+
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
