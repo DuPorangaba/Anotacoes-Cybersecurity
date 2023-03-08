@@ -11,7 +11,7 @@
 **Workflow**
 - [X] [Navegação](#navegação)
 - [X] [Trabalhando com Arquivos e Diretórios](#arquivos-e-diretórios)
-- [ ] [Editando Arquivos](#editando-arquivos)
+- [X] [Editando Arquivos](#editando-arquivos)
 - [ ] [Achando Arquivos e Diretórios](#)
 - [ ] [Descritores de arquivo e redirecionamentos](#)
 - [ ] [Filtrando Contéudos](#)
@@ -274,6 +274,72 @@ mv <file> <directory>
 ### Copiar
 
 Se queremos copiar um arquivo para outro lugar podemos usar o comando `cp <caminho_do_arquivo> <caminho_de_destino>`
+
+## Editando Arquivos
+Os editores de textos mais comuns são o `Vi` e o `Vim`. E raramente, podemos usar o `Nano`.
+
+*Obs: Se usar qualquer dos editores `nano/vim <arquivo>` para editar um arquivo, se este não existir o editor cria para você e se existir apenas irá abri-*
+
+### Nano
+Quando você abre o nano, você verá algo mais ou menos assim:
+```
+  GNU nano 2.9.3                                    notes.txt                                              
+
+Here we can type everything we want and make our notes.▓
+
+
+^G Get Help    ^O Write Out   ^W Where Is    ^K Cut Text    ^J Justify     ^C Cur Pos     M-U Undo
+^X Exit        ^R Read File   ^\ Replace     ^U Uncut Text  ^T To Spell    ^_ Go To Line  M-E Redo
+```
+
+O acento circunflexo, ou chapeuzinho, (^) significa `[Ctrl]`.
+
+Alguns comandos básicos para usar o `Nano`:
+- `[CTRL + W]` para pesquisar alguma informação no arquivo
+- `[CTRL + O]` para salvar um arquivo
+- `[CTRL + X]` para sair do editor
+
+### Ver o conteúdo de um arquivo no Shell
+
+Para visualizar um arquivo no shell sem precisar abrir um editor de texto, podemos usar o `cat`.
+
+### Vim
+Quando abrimos o vim, temos isso:
+```
+1 $
+~
+~                              VIM - Vi IMproved                                
+~                                                                               
+~                               version 8.0.1453                                
+~                           by Bram Moolenaar et al.                            
+~           Modified by pkg-vim-maintainers@lists.alioth.debian.org             
+~                 Vim is open source and freely distributable                   
+~                                                                               
+~                           Sponsor Vim development!                            
+~                type  :help sponsor<Enter>    for information                  
+~                                                                               
+~                type  :q<Enter>               to exit                          
+~                type  :help<Enter>  or  <F1>  for on-line help                 
+~                type  :help version8<Enter>   for version info                 
+~                                                                               
+                                                                         
+                                                                    0,0-1         All
+```
+
+O Vim, diferente do Nano, é um editor modal que consegue distinguir texto de entrada de comandos.
+
+O Vim oferece seis modos fundamentais, que o torna muitos poderoso:
+Mode   | Descrição
+-------|-------------
+Normal |Neste modo todos os inputs são considerados comandos para o editor. Assim, tudo que digitamos não é inserido no buffer do editor (no arquivo). Sempre que entrammos no Vim, estamos nesse modo.
+Insert |Todos os caracteres digitados são inseridos no buffer do editor (no arquivo). Tem execeções.
+Visual |Este modo é utilizado para marcar uma parte do texto, que ficará destacada. Essa área então pode ser editada de várias maneiras, como exclusão, cópia ou substituição
+Command |Ele nos permite inserir comandos de linha única na parte inferior do editor. Isso pode ser usado para classificar, substituir seções de texto ou excluí-las.
+Replace |Nesse modo, o texto inserido recentemente substituirá os caracteres de texto existentes, a menos que não haja mais caracteres antigos na posição atual do cursor. Em seguida, o texto recém-inserido será adicionado.
+
+Quando temos o editor Vim aberto, podemos entrar no modo de comando digitando ":" e digitando "q" para fechar o Vim.
+
+>Vim oferece uma excelente oportunidade chamada vimtutor para praticar e se familiarizar com o editor. Basta digitar `vimtutor` no terminal
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
