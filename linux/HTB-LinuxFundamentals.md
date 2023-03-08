@@ -10,8 +10,8 @@
 
 **Workflow**
 - [X] [Navegação](#navegação)
-- [ ] [Trabalhando com Arquivos e Diretórios](#)
-- [ ] [Editando Arquivos](#)
+- [X] [Trabalhando com Arquivos e Diretórios](#arquivos-e-diretórios)
+- [ ] [Editando Arquivos](#editando-arquivos)
 - [ ] [Achando Arquivos e Diretórios](#)
 - [ ] [Descritores de arquivo e redirecionamentos](#)
 - [ ] [Filtrando Contéudos](#)
@@ -241,6 +241,39 @@ Para facilitar a nossa vida, o shell tem a função de auto-complete. Começamos
 Quando navegamos muito pelo shell, ele pode acabar cheio de informação. Para isso podemos limpar ele usando o comando `clean` ou o seu atalho `[Ctrl] + [L]`. 
 
 Para ver o histórico do comando que usamos podemos usar as setinhas (↑ or ↓). E se quisermos pesquisar dentro do histórico de comandos podemos usar `[Ctrl] + [R]` e digitar o que estamos procurando.
+
+## Arquivos e Diretórios
+O terminal no Linux é muito eficiente, pois podemos acessar arquivos em poucos comandos, e editar e modificar os arquivos seletivamente com expressões regulares (regex). Assim, você pode rodar diversos comandos e redirecionar o output do arquivo.
+
+Editamos os arquivos no linux usando o vim ou o nano.
+
+### Criar
+
+Para criar um arquivo vazio podemos usar o `touch <name>` e para criar um diretório vazio podemos usar `mkdir <name>`.
+
+Se quisermos criar diretórios específicos no diretório, podemos usar o comando `mkdir` com a flag `-p` para adicionar diretórios pais.
+
+> Para termos uma visualização gráfica da estrutura de diretórios pais, podemos usar `tree`
+
+Também podemos criar arquivos diretamente nos diretórios especificando o caminho onde o arquivo deve ser armazenado. O truque é usar o ponto único (.) para informar ao sistema que queremos iniciar a partir do diretório atual.
+
+### Mover
+
+Para renomear e mover arquivos e diretórios usamos o comando `mv`.
+
+**Renomear**
+```
+mv <file/directory> <renamed file/directory>
+```
+
+**Mover**
+```
+mv <file> <directory>
+```
+
+### Copiar
+
+Se queremos copiar um arquivo para outro lugar podemos usar o comando `cp <caminho_do_arquivo> <caminho_de_destino>`
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
