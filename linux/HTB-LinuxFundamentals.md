@@ -9,7 +9,7 @@
 - [X] [Onde é que eu tô? Quem sou eu?](#informações-sobre-o-sistema)
 
 **Workflow**
-- [ ] [Navegação](#)
+- [X] [Navegação](#navegação)
 - [ ] [Trabalhando com Arquivos e Diretórios](#)
 - [ ] [Editando Arquivos](#)
 - [ ] [Achando Arquivos e Diretórios](#)
@@ -182,12 +182,16 @@ Comando | Descrição
 Secure Shell (SSH) se refere a um protocolo que permite que clients acessem e executem comandos ou ações em computadores remotos. 
 
 ## Navegação
+***pwd***
+
 Antes de andar pelo sistema, precismos saber onde estamos. Para isso, usamos o comando `pwd` (print working directory)
 ```
 cry0l1t3@htb[~]$ pwd
 
 /home/cry0l1t3
 ```
+
+***ls***
 
 Para listar os contéudos que estão dentro de um diretório, usamos `ls`. 
 ```
@@ -208,8 +212,35 @@ drwxr-xr-x 2 cry0l1t3 htbacademy 4096 Nov 13 17:34 Documents
 drwxr-xr-x 3 cry0l1t3 htbacademy 4096 Nov 15 03:26 Downloads
 ...
 ```
+Vamos traduzir as informações. 
+- Na **primeira linha**, nós vemos a quantidade total de blocos (512-byte) que estão sendo utilizados pelos arquivos e diretórios. Para saber *quandos bytes do disco estamos utilizando, basta multiplicar o total por 512*.
+- **drwxr-xr-x** - é o tipo do arquivo e as permissões (se for *d* é diretório, e se for *-* é arquivo)
+- **2** - Hard links
+- **cry0l1t3** - é o proprietário do arquivo/diretório
+- **htbacademy** - é o grupo proprietário do arquivo/diretório
+- **4096** - é o tamanho ou número de blocos utilizados para armazenar o arquivo/diretório
+- **Nov 13 17:37** -  é a data e o horário 
+- **Desktop** -  É o nome do arquivo/diretório
 
+No entanto, às vezes não podemos ver tudo o que está na pasta. Para ver os arquivos escondidos de um diretório usamos `ls -la`.
 
+Para listar os contéudos de um diretório qualquer sem estar nele, basta uar `ls /caminho/para/o/diretório`.
+
+***cd***
+
+Para se mover entre os diretórios, usamos o comando `cd /caminho/para/onde/queremos/ir` (change directory). 
+
+Se quisermos voltar para onde estavámos, e não sabemos o caminho ou apenas queremos encurtar as coisas, usamos `cd -`.
+
+Para facilitar a nossa vida, o shell tem a função de auto-complete. Começamos a digitar o caminho para o diretório e apertamos **[TAB]**. 
+
+> **Pontos dentro do Shell**
+> Um ponto (.) significa o diretório que estamos atualmente. 
+> Dois pontos (..) representa o diretório pai. Assim, podemos ir para o diretório pai usando `cd ..`
+
+Quando navegamos muito pelo shell, ele pode acabar cheio de informação. Para isso podemos limpar ele usando o comando `clean` ou o seu atalho `[Ctrl] + [L]`. 
+
+Para ver o histórico do comando que usamos podemos usar as setinhas (↑ or ↓). E se quisermos pesquisar dentro do histórico de comandos podemos usar `[Ctrl] + [R]` e digitar o que estamos procurando.
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
