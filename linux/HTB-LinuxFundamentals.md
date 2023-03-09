@@ -13,7 +13,7 @@
 - [X] [Trabalhando com Arquivos e Diretórios](#arquivos-e-diretórios)
 - [X] [Editando Arquivos](#editando-arquivos)
 - [X] [Achando Arquivos e Diretórios](#achando-arquivos-e-diretórios)
-- [ ] [Descritores de arquivo e redirecionamentos](#descritores-de-arquivo-e-redirecionamentos)
+- [X] [Descritores de arquivo e redirecionamentos](#descritores-de-arquivo-e-redirecionamentos)
 - [ ] [Filtrando Contéudos](#)
 - [ ] [Expressões Regulares](#)
 - [ ] [Gerenciando Permissões](#)
@@ -395,8 +395,51 @@ Podemos redirecionar os **erros** para "null device", em todos os dados são des
 ![image](https://user-images.githubusercontent.com/62816035/223894107-fcc3a613-8c16-4155-bfff-93978eded595.png)
 
 ### Redirecionando STDOUT para um arquivo
-Para redirecionar a sa
+Para redirecionar a saida padrão para um arquivo, usamos o sinal de maior (**>**). Assim, basta colocarmos `1 > <arquivo>`.
 
+![image](https://user-images.githubusercontent.com/62816035/224144201-6e0a0e43-eb33-47b8-b3b5-cd1648ae6ba4.png)
+
+
+Outra opção, é redirecionar todos os erros (STDERR - 2) para o "null device" e depois redirecionar a saída padrão para um arquivo.
+
+![image](https://user-images.githubusercontent.com/62816035/224144572-14f32ed4-eee5-40b5-8c4a-5994cd90b38a.png)
+
+### Redirecionado STDOUT e STDERR para arquivos diferentes
+Para sermos mais precisos, não descartar todos os erros (como fizemos no último exemplo), vamos redirecionar a saída de erro padrão (FD 2 - STDERR) e a saída padrão (FD 1 - STDOUT) para arquivos diferentes.
+
+![image](https://user-images.githubusercontent.com/62816035/224145629-3def87ca-f1da-431b-a381-73c69027e324.png)
+
+
+### Redirecionando o STDIN
+Nos exemplos passados apenas usamos o caracter de maior (>). 
+
+Também podemos usar o caracter de menor (<), este serve para a entrada padrão (FD 0 - STDIN). 
+
+> Esses caracteres podem ser vistos como "direção" na forma de uma seta que nos diz "de onde" e "para onde" os dados devem ser redirecionados.
+
+Vamos usar o conteúdo do arquivo "results.txt" como STDIN para o comando `cat`.
+![image](https://user-images.githubusercontent.com/62816035/224152177-35ffe113-ba8d-4fa5-a9bd-14526fee2546.png)
+
+
+### Redirecinando STDOUT e o anexando a um arquivo
+Quando usamos o sinal de maior (>) para redirecionar o STDOUT, um novo arquivo é criado automaticamente, caso ainda não exista. 
+
+Se o arquivo existir, ele será subsitituído se a solitação de uma confirmação. Se quisermos acrescentar o STDOUT ao nosso arquivo existente, podemos usar o sinal de maior duplo (>>)
+
+![image](https://user-images.githubusercontent.com/62816035/224152737-5776b489-6b17-4ebb-bd06-c95cd3c71737.png)
+
+Vemos o STDOUT do exemplo passado (de redirecionar o STDOUT) e os novos STDOUT.
+
+### Redirecionar fluxo STDIN para um arquivo
+Também podemos usar os caracteres duplos menores que (<<) para adicionar nossa entrada padrão por meio de um fluxo.
+
+Podemos usar a chamada função End-Of-File (EOF) de um arquivo de sistema Linux, que define o final da entrada. 
+
+No próximo exemplo, usaremos o comando `cat` para ler nossa entrada de streaming por meio do stream e direcioná-lo para um arquivo chamado "stream.txt". 
+![image](https://user-images.githubusercontent.com/62816035/224155344-284c6fab-a583-464a-9b90-f1d5ad7c7430.png)
+
+### Pipes
+Outra maneira de redirecionar STDOUT é usar pipes (|). Estes são úteis quando queremos usar o STDOUT de um programa para ser processado por outro.
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
