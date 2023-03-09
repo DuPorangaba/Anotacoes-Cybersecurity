@@ -13,7 +13,7 @@
 - [X] [Trabalhando com Arquivos e Diretórios](#arquivos-e-diretórios)
 - [X] [Editando Arquivos](#editando-arquivos)
 - [X] [Achando Arquivos e Diretórios](#achando-arquivos-e-diretórios)
-- [ ] [Descritores de arquivo e redirecionamentos](#)
+- [ ] [Descritores de arquivo e redirecionamentos](#descritores-de-arquivo-e-redirecionamentos)
 - [ ] [Filtrando Contéudos](#)
 - [ ] [Expressões Regulares](#)
 - [ ] [Gerenciando Permissões](#)
@@ -379,9 +379,23 @@ Por padrão, o Linux tem três descritores de arquivos:
 ### STDIN e STDOUT
 Vamos usar o `cat` para visualizar a entrada e saída padrão.
 
+![image](https://user-images.githubusercontent.com/62816035/223893448-644b290c-04ef-42e2-bdbf-efdd825ddc8d.png)
 
+Ao executar `cat`, damos ao programa em execução nossa entrada padrão `(STDIN - FD 0)`, marcada em verde. Assim que tivermos confirmado nossa entrada com `[ENTER]`, ela é retornada ao terminal como saída padrão `(STDOUT - FD 1)`, marcada em vermelho.
 
-Ao executar `cat`, damos ao programa em execução nossa entrada padrão (STDIN - FD 0), marcada em verde. Assim que tivermos confirmado nossa entrada com [ENTER], ela é retornada ao terminal como saída padrão (STDOUT - FD 1), marcada em vermelho.
+### STDOUT e STDERR
+Para entender a saída e saída de erro padrão vamos usar o `find`.
+
+![image](https://user-images.githubusercontent.com/62816035/223893780-fb5a5cf3-4e70-4755-ad96-ac5ae8406292.png)
+
+Vemos a saída padrão `(STDOUT - FD 1)` de verde e a saída de erro padrão (STDERR - FD 2) marcada de vermelho.
+
+Podemos redirecionar os **erros** para "null device", em todos os dados são descartados. Assim, só ficaremos com a saída padrão `(STDOUT - FD 1)`.
+
+![image](https://user-images.githubusercontent.com/62816035/223894107-fcc3a613-8c16-4155-bfff-93978eded595.png)
+
+### Redirecionando STDOUT para um arquivo
+Para redirecionar a sa
 
 
 ## Gerenciamento de Usuários
