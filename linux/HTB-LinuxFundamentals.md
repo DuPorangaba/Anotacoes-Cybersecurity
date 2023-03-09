@@ -364,6 +364,24 @@ Para atualizar o banco de dados, usamos `sudo updatedb`.
 
 No entanto, o `locate` não tem muitas opções de filtro. Dessa maneira, devemos analisar em que casos usar ele e em que casos usar o `find`.
 
+## Descritores de arquivo e Redirecionamento
+Um descritor de arquivo em sistemas Unix/Linux é um indicador de conexão mantida pelo kernel para executar operações de Entrada/Saída (E/S).
+
+>No windows, é chamado de filehandle.
+
+É a conexão (geralmente a um arquivo) do sistema operacional para realizar operações E/S (Entra/Saída de Bytes).
+
+Por padrão, o Linux tem três descritores de arquivos:
+- Fluxo de Dados para Entrada - `STDIN - 0`
+- Fluxo de Dados para Saída - `STDOUT - 1`
+- Fluxo de Dados para Saída relacionada a um erro ocorrendo - `STDERR - 2`
+
+### STDIN e STDOUT
+Vamos usar o `cat` para visualizar a entrada e saída padrão.
+
+
+
+Ao executar `cat`, damos ao programa em execução nossa entrada padrão (STDIN - FD 0), marcada em verde. Assim que tivermos confirmado nossa entrada com [ENTER], ela é retornada ao terminal como saída padrão (STDOUT - FD 1), marcada em vermelho.
 
 
 ## Gerenciamento de Usuários
