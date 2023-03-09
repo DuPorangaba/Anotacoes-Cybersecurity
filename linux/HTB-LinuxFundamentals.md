@@ -12,7 +12,7 @@
 - [X] [Navegação](#navegação)
 - [X] [Trabalhando com Arquivos e Diretórios](#arquivos-e-diretórios)
 - [X] [Editando Arquivos](#editando-arquivos)
-- [ ] [Achando Arquivos e Diretórios](#)
+- [X] [Achando Arquivos e Diretórios](#achando-arquivos-e-diretórios)
 - [ ] [Descritores de arquivo e redirecionamentos](#)
 - [ ] [Filtrando Contéudos](#)
 - [ ] [Expressões Regulares](#)
@@ -340,6 +340,31 @@ Replace |Nesse modo, o texto inserido recentemente substituirá os caracteres de
 Quando temos o editor Vim aberto, podemos entrar no modo de comando digitando ":" e digitando "q" para fechar o Vim.
 
 >Vim oferece uma excelente oportunidade chamada vimtutor para praticar e se familiarizar com o editor. Basta digitar `vimtutor` no terminal
+
+## Achando Arquivos e Diretórios
+
+No linux temos ferramentas que facilitam a nossa busca por arquivos e diretórios, assim não precisamos ficar pesquisando manualmente por esses.
+
+### Which
+Esse comando retorna o caminho para o arquivo ou um link que pode ser executado. 
+
+Isso permite determinar se programas específicos estão disponíveis no sitema operacional. Se o programa não existir, não aparecerá nada.
+
+### Find
+
+Além de sua função de achar arquivos e diretórios, o `find` tem a função de filtra os resultados. Dessa forma, pode-se usar parâmetros como filtro, por exemplo, o tamanho do arquivo ou uma data. E, até mesmo, especificar se estamos apenas procurando por arquivos ou diretórios.
+
+### Locate
+
+Demoraria muito tempo para pesquisar em todo o sistema por alguns arquivos ou diretórios.
+
+Assim, o comando `locate` oferece uma maneira rápida de pesquisar em todo o sistema. Já que, diferente do `find`, o `locate` trabalha com um banco de dados que contém toda informação sobre arquivos e diretórios existentes no sistema.
+
+Para atualizar o banco de dados, usamos `sudo updatedb`.
+
+No entanto, o `locate` não tem muitas opções de filtro. Dessa maneira, devemos analisar em que casos usar ele e em que casos usar o `find`.
+
+
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
