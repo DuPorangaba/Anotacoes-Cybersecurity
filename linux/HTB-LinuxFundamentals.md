@@ -14,7 +14,7 @@
 - [X] [Editando Arquivos](#editando-arquivos)
 - [X] [Achando Arquivos e Diretórios](#achando-arquivos-e-diretórios)
 - [X] [Descritores de arquivo e redirecionamentos](#descritores-de-arquivo-e-redirecionamentos)
-- [ ] [Filtrando Contéudos](#)
+- [ ] [Visualizando e Filtrando Contéudos](#visualizando-e-filtrando-contéudos)
 - [ ] [Expressões Regulares](#)
 - [ ] [Gerenciando Permissões](#)
 
@@ -440,6 +440,33 @@ No próximo exemplo, usaremos o comando `cat` para ler nossa entrada de streamin
 
 ### Pipes
 Outra maneira de redirecionar STDOUT é usar pipes (|). Estes são úteis quando queremos usar o STDOUT de um programa para ser processado por outro.
+
+## Visualizando e Filtrando Contéudos
+
+### Pagers
+Não precisamos necessariamente usar editores para visualizarmos arquivos.
+
+Existem pagers que nos permitem percorrer o arquivo em uma visão interativa.
+
+#### More
+Depois de ler o conteúdo usando cat e redirecioná-lo para more, o pager já mencionado é aberto e iniciaremos automaticamente no início do arquivo.
+
+```
+more <arquivo>
+```
+
+Com a tecla [Q], podemos sair deste pager. Notaremos que a saída permanece no terminal.
+
+#### Less
+O `less` funciona quase igual o `more`, no entanto ele possui mais recursos que o `more`, vemos isso em sua man page.
+
+Ao fechar o `less` com a tecla [Q], notamos que a saída que vimos, ao contrário do `more`, não fica no terminal.
+
+#### Head
+Às vezes, estaremos interessados apenas em questões específicas no início ou no final do arquivo. Se quisermos apenas obter as primeiras linhas do arquivo, podemos usar 
+de ferramenta o `head`. 
+
+Por padrão, `head` imprime as primeiras dez linhas do arquivo ou input fornecido, se não for especificado de outra forma
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
