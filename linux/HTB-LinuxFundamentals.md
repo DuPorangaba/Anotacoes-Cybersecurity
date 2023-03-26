@@ -468,6 +468,34 @@ de ferramenta o `head`.
 
 Por padrão, `head` imprime as primeiras dez linhas do arquivo ou input fornecido, se não for especificado de outra forma
 
+#### Tail
+Se nós queremos ver as últimas partes de um arquivo, podemos usar o `tail`, que nós devolve as últimas dez linhas.
+
+#### Sort
+Frequentemente, precisamos ver os resultados organizados na ordem alfabética ou númerica. Para isso, podemos usar o `sort`.
+
+#### Grep
+O `grep` serve para pesquisarmos por resultados específicos que contém padrões que definimos. 
+
+### Cut
+Resultados específicos com caracteres diferentes podem ser separados como delimitadores. Aqui é útil saber como remover delimitadores específicos e mostrar as palavras em uma linha em uma posição especificada. Uma das ferramentas que podem ser utilizadas para isso é o `cut`.
+
+#### Tr
+Podemos substituir caracteres de uma linha por outro caracter que queremos usando o `tr`
+
+#### Column
+Essa ferramenta é usada para exibir os resultados em forma de tabela.
+
+#### Awk
+O  `awk` é uma linguagem de digitalização e processamento de padrões. Com ela, podemos, por exemplo, exibir o primeiro ($1) e o último ($NF) resultado da linha.
+
+#### Sed
+É um editor de stream. Um dos usos mais comuns disso é a substituição de texto. Aqui, o sed procura padrões que definimos na forma de expressões regulares (regex) e os substitui por outro padrão que também definimos.
+
+#### Wc
+Muitas vezes será útil saber quantas correspondências bem-sucedidas temos. Para evitar a contagem de linhas ou caracteres manualmente, podemos usar a ferramenta wc. Com a opção "-l", especificamos que apenas as linhas são contadas.
+
+
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
 
