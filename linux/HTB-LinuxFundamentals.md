@@ -14,8 +14,8 @@
 - [X] [Editando Arquivos](#editando-arquivos)
 - [X] [Achando Arquivos e Diretórios](#achando-arquivos-e-diretórios)
 - [X] [Descritores de arquivo e redirecionamentos](#descritores-de-arquivo-e-redirecionamentos)
-- [ ] [Visualizando e Filtrando Contéudos](#visualizando-e-filtrando-contéudos)
-- [ ] [Expressões Regulares](#)
+- [X] [Visualizando e Filtrando Contéudos](#visualizando-e-filtrando-contéudos)
+- [ ] [Expressões Regulares](#regex)
 - [ ] [Gerenciando Permissões](#)
 
 **Gerenciando o Sistema**
@@ -477,7 +477,7 @@ Frequentemente, precisamos ver os resultados organizados na ordem alfabética ou
 #### Grep
 O `grep` serve para pesquisarmos por resultados específicos que contém padrões que definimos. 
 
-### Cut
+#### Cut
 Resultados específicos com caracteres diferentes podem ser separados como delimitadores. Aqui é útil saber como remover delimitadores específicos e mostrar as palavras em uma linha em uma posição especificada. Uma das ferramentas que podem ser utilizadas para isso é o `cut`.
 
 #### Tr
@@ -495,6 +495,22 @@ O  `awk` é uma linguagem de digitalização e processamento de padrões. Com el
 #### Wc
 Muitas vezes será útil saber quantas correspondências bem-sucedidas temos. Para evitar a contagem de linhas ou caracteres manualmente, podemos usar a ferramenta wc. Com a opção "-l", especificamos que apenas as linhas são contadas.
 
+## Regex
+Expressões regulares descreve um conjunto de cadeias de caracteres, de forma concisa, sem precisar listar todos os elementos do conjunto.
+
+Elas são utilizadas para procurar par padrões específicos em textos ou arquivos. Além disso, regex também é utilizado em aplicações web para fazer a validação da entrada do usuário.
+
+Alguns operadores regex:
+Operadores | Descrição
+-----------|-----------
+(a)        |Usado para agrupar partes de um regex. Dentro dos parentêses, você pode definir outros padrões que devem ser processados juntos.  
+[a-z]      |Usado para definir classes de caracteres. Dentro dos colchetes, você pode especificar a lista dos caracteres que você está buscando por.
+[^a-z]     |Usado para negar. Corresponde aos caracteres que não está entre colchetes.
+{1,10}     |Os  são usados para definir quantificadores. Dentro das chaves, você pode especificar um número ou um intervalo que indica a frequência com que um padrão anterior deve ser repetido.
+|          |É o operador de OU, mostra os resultados quando uma das duas expressões corresponde
+.*         |É o operador de E, os resultados são exibidos apenas se ambas as expressões corresponderem
+^          |Corresponde à posição inicial dentro da string. Em ferramentas baseadas em linha, corresponde à posição inicial de qualquer linha.
+$          |Corresponde à posição final da string ou à posição logo antes de uma nova linha no final da string. Em ferramentas baseadas em linha, corresponde à posição final de qualquer linha.
 
 ## Gerenciamento de Usuários
 O gerenciamento de usuários nos permite criar novos usuários, adicionar usuários em grupos específicos, executar comandos como um usuário diferente, etc. 
